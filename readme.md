@@ -13,15 +13,30 @@ Dev Cell. 2022.
 
 ## Installation
 
-These instructions will get you a copy of the analysis software 
-to use with Matlab on your local machine. 
+These instructions will get you a copy of the analysis software.
+We provide both matlab code to use with Matlab on your local machine, 
+and pre-compiled executable to use without matlab.
 
 ### Prerequisites
 
 We developed and tested this package with Matlab R2018b. Matlab can be obtained and
 installed from [Mathworks](https://www.mathworks.com/products/matlab.html).
 
-### Installing
+### Installing pre-compiled version
+Determine in which directory you would like to install the package. 
+This will be the installation directory.
+
+Download the package source code from GitHub. Copy the zip file into the
+installation directory, and unzip the package.
+
+```
+unzip RNA_deg_ESCs-master.zip
+```
+
+The executables are available to use.
+
+
+### Installing on Matlab
 
 Determine in which directory you would like to install the package. 
 This will be the installation directory.
@@ -42,11 +57,39 @@ addpath <path to installation directory>;
 Now you can run in matlab all the source code that is saved in the 
 installation directory (see example below).
 
-## Example data
+## Example data: pre-compiled
 
 The package that you downloaded includes an example for using the package.
 
-To run the example, browse to the installation directory. Then run:
+To run the example via pre-compiled executables, browse to the installation directory. Then run:
+
+```
+>> make run_WT_example run_KO_example
+```
+
+In the example, we analyze two datasets: WT and KO.
+This analysis will create 2 directories with the results of each of the 2 analyses:
+
+```
+example_KO
+example_WT
+```
+
+The analyses directories contain the following files:
+
+```
+degradation_rates.jpg - histogram plots of degradation rates and initial expression values
+degradation_rates.txt - tab delimited list of degradation rates and r-square values per gene
+degradation_rates.rsq.txt - tab delimited list of degradation rates and r-square values per gene, only for genes with r-square value above 0.5
+stable_genes.jpg - plot of expression levels of stable genes selected for normalization
+stable_genes.txt - list of stable genes selected for normalization
+```
+Degradation rates are given as half-life (time until half of the initial level is reached).
+
+
+## Example data: on Matlab
+
+To run the example via matlab, browse to the installation directory. Then run:
 ```
 >> run_example
 ```
