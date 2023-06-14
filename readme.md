@@ -129,7 +129,7 @@ For the k-mer analysis please download the following [package](https://github.co
 
 Convert the output file so that it is formatted appropriately:
 ```
->> make convert_file_format /path/to/degradation_rates.rsq.txt
+>> make convert_file_format path=/path/to/degradation_rates.rsq.txt
 ```
 
 
