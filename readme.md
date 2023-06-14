@@ -123,6 +123,14 @@ degradation_rates.fasterdg.txt - list of genes with faster degradation in treatm
 degradation_rates.slowerdg.txt - list of genes with slower degradation in treatment (T) vs control (C)
 degradation_rates.xy.jpg - plots of correlation between parameters in treatment (T) vs control (C)
 ```
+## k-mer analysis
+
+For the k-mer analysis please download the following [package](https://github.com/rabanilab/cont_kmer_analysis) and follow instructions there.
+
+Convert the output file so that it is formatted appropriately:
+```
+>> make convert_file_format /path/to/degradation_rates.rsq.txt
+```
 
 
 ## License
