@@ -7,3 +7,6 @@ run_WT_example:
 
 run_KO_example:
 	make run_dg_estimate TPM_FILE=example_ko_tpm.txt OUTPUT_DIR=example_ko;
+
+convert_file_format:
+    Rscript deg_out_to_kmer.R $(path)
