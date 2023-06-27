@@ -45,3 +45,19 @@ kmer_KO_example:
 	make run_ks_test path_to_kmer_matrices=mmusculus_3UTR_ensembl99/3utr/kmer_matrices_comp PARAMETERS_FILE=../example_ko/degradation_rates.rsq.kmer.tsv output_path=../example_ko term=all; \
 	make ks_tests_plots ks_test_output_folder=../example_ko term=all output_path=../example_ko; \
 	cd ..;
+
+run_complete_analysis:
+	echo "Running degradation estimate..."; \
+	make run_dg_estimate TPM_FILE=$(input_tpm_file).txt OUTPUT_DIR=$(out_dir); \
+	echo "downloading kmer package..."; \
+	make download_kmer_analysis_package; \
+	cd cont_kmer_analysis; \
+	make unzip_kmer_files ORGANISM=$(ensembl_organism); \
+	cd ..; \
+	echo "Running kmer analysis..."; \
+	make convert_file_format path=$(out_dir)/degradation_rates.rsq.txt; \
+	cd cont_kmer_analysis; \
+	make run_ks_test path_to_kmer_matrices=$(ensembl_organism)/3utr/kmer_matrices_comp PARAMETERS_FILE=../$(out_dir)/degradation_rates.rsq.kmer.tsv output_path=../$(out_dir) term=all; \
+	make ks_tests_plots ks_test_output_folder=../$(out_dir) term=all output_path=../$(out_dir); \
+	cd ..; \
+	echo "Done!";

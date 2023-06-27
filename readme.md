@@ -141,6 +141,19 @@ To run the k-mer analysis on the resulting degradation rates, use the following 
 ```
 >> make kmer_WT_example kmer_KO_example
 ```
+This will create the following files in the output directory:
+```
+all_ks_raw_with_stats.tsv - results of the K-S tests, used to create the volcano plots
+all_half_life_volcano_one_sided.png - volcano plot of the enriche dkmers
+```
+
+## complete analysis
+After installing the package the entire analysis can be run using the following command:
+```
+>> make run_complete_analysis input_tpm_file=example_wt_tpm.txt out_dir=example_wt ensembl_organism=mmusculus_3UTR_ensembl99
+>> make run_complete_analysis input_tpm_file=example_ko_tpm.txt out_dir=example_ko ensembl_organism=mmusculus_3UTR_ensembl99
+```
+For running on other datasets the parameters can be updated.
 
 ## License
 
