@@ -48,7 +48,7 @@ kmer_KO_example:
 
 run_complete_analysis:
 	echo "Running degradation estimate..."; \
-	make run_dg_estimate TPM_FILE=$(input_tpm_file).txt OUTPUT_DIR=$(out_dir); \
+	make run_dg_estimate TPM_FILE=$(input_tpm_file) OUTPUT_DIR=$(out_dir); \
 	echo "downloading kmer package..."; \
 	make download_kmer_analysis_package; \
 	cd cont_kmer_analysis; \
