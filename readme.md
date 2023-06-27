@@ -26,11 +26,10 @@ installed from [Mathworks](https://www.mathworks.com/products/matlab.html).
 Determine in which directory you would like to install the package. 
 This will be the installation directory.
 
-Download the package source code from GitHub. Copy the zip file into the
-installation directory, and unzip the package.
+Clone the package directly into the installation directory.
 
 ```
-unzip RNA_deg_ESCs-master.zip
+git clone https://github.com/rabanilab/RNA_deg_ESCs
 ```
 
 The executables are available to use.
