@@ -31,6 +31,7 @@ Clone the package directly into the installation directory.
 ```
 git clone https://github.com/rabanilab/RNA_deg_ESCs
 cd RNA_deg_ESCs
+make update_permissions
 ```
 
 The executables are available to use.
@@ -71,8 +72,8 @@ In the example, we analyze two datasets: WT and KO.
 This analysis will create 2 directories with the results of each of the 2 analyses:
 
 ```
-example_KO
-example_WT
+example_ko
+example_wt
 ```
 
 The analyses directories contain the following files:
