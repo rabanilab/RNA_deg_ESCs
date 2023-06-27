@@ -126,16 +126,19 @@ degradation_rates.xy.jpg - plots of correlation between parameters in treatment 
 ## k-mer analysis
 
 To run the k-mer analysis on the resulting degradation rates, use the following steps:
-1. Download the [k-mer analysis package](https://github.com/rabanilab/cont_kmer_analysis) and follow instructions there for installation.
+1. Download the [k-mer analysis package](https://github.com/rabanilab/cont_kmer_analysis) and extract precalculated kmer tables:
+```
+>> make download_kmer_analysis_package
+>> make unzip_example
+```
 
 2. Convert the output file so that it is formatted appropriately:
 ```
->> make convert_file_format path=/path/to/degradation_rates.rsq.txt
+>> make convert_WT_file_example convert_KO_file_example
 ```
 3. Run the following k-mer analysis commands
 ```
->> make run_ks_test_job path_to_kmer_matrices=3utr/kmer_matrices PARAMETERS_FILE=parameters.tsv output_path=3utr/kmer_out term=half_life 
->> make ks_tests_plots ks_test_output_folder=3utr/kmer_out term=half_life output_path=3utr/kmer_out/plots
+>> make kmer_WT_example kmer_KO_example
 ```
 
 ## License
