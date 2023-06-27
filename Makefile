@@ -12,7 +12,7 @@ run_KO_example:
 #                              kmer analysis                              #
 ###########################################################################
 
-include cont_kmer_analysis/makefile
+-include cont_kmer_analysis/makefile
 
 download_kmer_analysis_package:
 	git clone https://github.com/rabanilab/cont_kmer_analysis;
