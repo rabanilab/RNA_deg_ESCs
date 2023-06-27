@@ -18,7 +18,9 @@ download_kmer_analysis_package:
 	git clone https://github.com/rabanilab/cont_kmer_analysis;
 
 unzip_example:
-	make unzip_kmer_files ORGANISM=mmusculus_3UTR_ensembl99;
+	cd cont_kmer_analysis; \
+	make unzip_kmer_files ORGANISM=mmusculus_3UTR_ensembl99; \
+	cd ..;
 
 convert_file_format:
 	Rscript deg_out_to_kmer.R $(path);
@@ -30,9 +32,13 @@ convert_KO_file_example:
 	make convert_file_format path=example_KO/degradation_rates.rsq.txt;
 
 kmer_WT_example:
-	make run_ks_test cont_kmer_analysis/mmusculus_3UTR_ensembl99/3utr/kmer_matrices_comp PARAMETERS_FILE=example_WT/degradation_rates.rsq.kmer.tsv output_path=example_WT term=all;
-	make ks_tests_plots ks_test_output_folder=example_WT term=all output_path=example_WT;
+	cd cont_kmer_analysis; \
+	make run_ks_test mmusculus_3UTR_ensembl99/3utr/kmer_matrices_comp PARAMETERS_FILE=example_WT/degradation_rates.rsq.kmer.tsv output_path=example_WT term=all; \
+	make ks_tests_plots ks_test_output_folder=example_WT term=all output_path=example_WT; \
+	cd ..;
 
 kmer_KO_example:
-	make run_ks_test cont_kmer_analysis/mmusculus_3UTR_ensembl99/3utr/kmer_matrices_comp PARAMETERS_FILE=example_KO/degradation_rates.rsq.kmer.tsv output_path=example_KO term=all;
-	make ks_tests_plots ks_test_output_folder=example_KO term=all output_path=example_KO;
+	cd cont_kmer_analysis; \
+	make run_ks_test cont_kmer_analysis/mmusculus_3UTR_ensembl99/3utr/kmer_matrices_comp PARAMETERS_FILE=example_KO/degradation_rates.rsq.kmer.tsv output_path=exa`mple_KO term=all; \
+	make ks_tests_plots ks_test_output_folder=example_KO term=all output_path=example_KO; \
+	cd ..;
