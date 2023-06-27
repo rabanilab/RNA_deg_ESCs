@@ -30,6 +30,7 @@ Clone the package directly into the installation directory.
 
 ```
 git clone https://github.com/rabanilab/RNA_deg_ESCs
+cd RNA_deg_ESCs
 ```
 
 The executables are available to use.
