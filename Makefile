@@ -36,12 +36,12 @@ convert_KO_file_example:
 
 kmer_WT_example:
 	cd cont_kmer_analysis; \
-	make run_ks_test path_to_kmer_matrices=mmusculus_3UTR_ensembl99/3utr/kmer_matrices_comp PARAMETERS_FILE=example_WT/degradation_rates.rsq.kmer.tsv output_path=example_wt term=all; \
+	make run_ks_test path_to_kmer_matrices=mmusculus_3UTR_ensembl99/3utr/kmer_matrices_comp PARAMETERS_FILE=example_wt/degradation_rates.rsq.kmer.tsv output_path=example_wt term=all; \
 	make ks_tests_plots ks_test_output_folder=example_wt term=all output_path=example_wt; \
 	cd ..;
 
 kmer_KO_example:
 	cd cont_kmer_analysis; \
-	make run_ks_test path_to_kmer_matrices=mmusculus_3UTR_ensembl99/3utr/kmer_matrices_comp PARAMETERS_FILE=example_KO/degradation_rates.rsq.kmer.tsv output_path=example_ko term=all; \
+	make run_ks_test path_to_kmer_matrices=mmusculus_3UTR_ensembl99/3utr/kmer_matrices_comp PARAMETERS_FILE=example_ko/degradation_rates.rsq.kmer.tsv output_path=example_ko term=all; \
 	make ks_tests_plots ks_test_output_folder=example_ko term=all output_path=example_ko; \
 	cd ..;
